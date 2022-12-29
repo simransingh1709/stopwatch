@@ -1,0 +1,22 @@
+.countdown-container{display:flex;
+    flex-direction: column;
+     text-align: center;
+     padding: 30px;
+     margin-left: 400px;
+     margin-right: 400px;
+     margin-top: 50px;
+    box-shadow: rgba(115, 110, 110, 0.3) 0px 19px 38px,rgba(0,0,0,0.22) 0px 15px 12px;
+font-size: 3.5em;}
+    button{
+        background-color: #5a216d; 
+        border: none;
+        color: rgb(241, 245, 248);
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        
+    }
+    

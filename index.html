@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        
+        <title>countdown</title>
+
+    </head>
+    <body>
+        <div class="countdown-container">
+         
+            <div id="mycount"> 0:0:0</div>
+            <div>
+                <button onclick="start()" id="start">start</button>
+                <button onclick="stop()" id="stop">stop</button>
+                <button onclick="resume()" id="resume">resume</button>
+                <button onclick="clear()" id="clear">clear</button>
+            </div>
+          
+        </div>
+        <script>
+            
+            var hr=0;
+            var min=0;
+            var sec=0;
+            var watch='';
+            function start(){
+                watch=setInterval(update,1000);
+            }
+            function update(){
+                sec=sec+1;
+                if(sec>59)
+                {
+                  min=min+1;
+                  sec=0;
+                  if(min>59){
+                  hr=hr+1;
+                  min=0;
+                  sec=0;
+                if(hr>11)
+                hr=0;
+                min=0;
+                sec=0;}
+
+                }
+                document.getElementById("mycount").innerHTML=hr+':'+min+':'+sec;
+                document.getElementById("clear").onclick=()=>{clear();};
+                document.getElementById("stop").onclick=()=>{stop();};
+                document.getElementById("resume").onclick=()=>{resume();};
+                function stop(){
+                    clearInterval(watch);
+                }
+                function resume(){
+                    watch =setInterval(update,1000);
+                }
+                function clear(){
+                    hr=0;
+                    sec=0;
+                    min=0;
+                    clearInterval(watch);
+                    document.getElementById('mycount').innerHTML=hr+':'+min+':'+sec;
+                }
+
+                
+            }
+        </script>
+    </body>
+</html>
